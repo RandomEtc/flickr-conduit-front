@@ -4,16 +4,16 @@
 
     $cfg = array();
 
-    $cfg['base_url'] = 'BASE_SITE_URL';
-    $cfg['base_push_url'] = 'URL_WHERE_CONDUIT_LISTENS';
+    $cfg['base_url'] = getenv('BASE_SITE_URL');
+    $cfg['base_push_url'] = getenv('URL_WHERE_CONDUIT_LISTENS');
     $cfg['base_push_callback_url'] = $cfg['base_push_url'] . 'callback?sub=';
-    $cfg['base_socket_url'] = 'BASE_SOCKET_URL'; // where socket.io is listening
+    $cfg['base_socket_url'] = getenv('BASE_SOCKET_URL'); // where socket.io is listening
 
     $cfg['logout'] = $cfg['base_url'] . 'logout.php';
     $cfg['login'] = $cfg['base_url'] . 'login.php';
 
-    $cfg['flickr_key'] = 'YOURFLICKRKEY';
-    $cfg['flickr_secret'] = 'YOURFLICKRSECRET';
+    $cfg['flickr_key'] = getenv('FLICKR_KEY');
+    $cfg['flickr_secret'] = getenv('FLICKR_SECRET');
 
     $cfg['account'] = array();
 

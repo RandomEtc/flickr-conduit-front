@@ -215,12 +215,14 @@
             });
 
             setInterval(function() {
-                console.log("running popper...");
+                //console.log("running popper...");
                 if (buffer.length > 0) {
                     console.log("popping...");
                     appendImage(buffer.pop());
                 } 
+            }, 1000);
 
+            setInterval(function() {
                 for (var i in events) {
                     socket.emit('heartbeat', events[i]);
                 }
