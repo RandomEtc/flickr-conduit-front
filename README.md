@@ -1,15 +1,18 @@
-flickr-conduit: a PubSub subscriber endpoint for Flickr's real-time PuSH feed
-===================
-
 ## Description
-
-flickr-conduit is a subsriber endpoint for Flickr's implementation of the PubSubHubbub spec. It handles the the 'subscribe', 'unsubscribe', and the parsing of the XML that Flickr pushes out.
-
-The server works in publish/subscribe model itself, with users registering events they're interested in and then flickr-conduit answering these subscription requests. This works identically to node's own EventEmitter class and in fact uses that under the covers.
 
 This repository is the PHP front-end from https://github.com/mncaudill/flickr-conduit modified to work with Heroku.
 
-## Installation
+## Prerequisites
+
+You should sign up for a Heroku account and install the Heroku command line client.
+
+## Back-end Installation
+
+First follow the instructions and create an app for https://github.com/RandomEtc/flickr-conduit-back
+
+## Front-end Installation
+
+Once you have the back-end running, clone this app and initialize another new Heroku app on the cedar stack:
 
 ```bash
 git clone https://github.com/RandomEtc/flickr-conduit-front.git
@@ -17,7 +20,9 @@ cd flickr-conduit-front
 heroku create --stack cedar
 ```
 
-The `create` command will tell you the URL of your new app, use this for the front-end in the following config. You should also use this URL as the callback URL when you register for a Flickr API key at http://www.flickr.com/services/apps/create/apply/ (you have to edit your app after you create it).
+Create a new Flickr API key and secret at http://www.flickr.com/services/apps/create/apply/ then edit your new Flickr app and add a callback URL using the app URL reported by `heroku create` plus auth.php - e.g. http://example.com/auth.php
+
+Grab the URL from your backend heroku app, and the URL you just created for this app, and them to the following config along with your new API key and secret:
 
 ```bash
 heroku config:add BASE_SITE_URL=http://frontend.example.com
