@@ -43,3 +43,5 @@ heroku open
 
 At the time of writing, Flickr's Push API only works for Pro accounts. Check the response at http://www.flickr.com/services/api/explore/flickr.push.getSubscriptions if in doubt.
 
+If you're a Flickr Pro user, have a look at http://hollow-stream-6919.herokuapp.com/ for an example of this app running live. Remember that it's realtime, so busy tags and popular locations work best for testing. If in doubt, use sunset :)
+
