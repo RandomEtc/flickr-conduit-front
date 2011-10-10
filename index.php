@@ -20,7 +20,7 @@
 <?php
     if ($show_login) {
 
-        print 'This is just an experiment. Please log in <a href="login.php">here</a>.';
+        print 'This is Nolan Caudill\'s <a href="https://github.com/mncaudill/flickr-conduit">Flickr Conduit</a> adapted for Heroku (<a href="https://github.com/RandomEtc/flickr-conduit-front/">front</a>, <a href="https://github.com/RandomEtc/flickr-conduit-back/">back</a>). Flickr Pro account holders can log in <a href="login.php">here</a>.';
 
     } else {
         print "<p>Logged in as {$GLOBALS['cfg']['account']['auth']['user']['username']}. <a href='{$GLOBALS['cfg']['logout']}'>Log out?</a></p>";
